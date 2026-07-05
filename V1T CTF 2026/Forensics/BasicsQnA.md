@@ -1,4 +1,4 @@
-<img width="2508" height="1037" alt="image" src="https://github.com/user-attachments/assets/caa9c5d8-16d1-4c1e-bbae-b26eac565c6b" /># Forensics Basic CTF - Writeup
+# Forensics Basic CTF - Writeup
 Tool: Wireshark
 Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
 
