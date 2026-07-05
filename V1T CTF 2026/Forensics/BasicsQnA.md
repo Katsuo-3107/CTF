@@ -1,4 +1,4 @@
-# Forensics Basic CTF - Writeup
+<img width="2508" height="1037" alt="image" src="https://github.com/user-attachments/assets/caa9c5d8-16d1-4c1e-bbae-b26eac565c6b" /># Forensics Basic CTF - Writeup
 Tool: Wireshark
 Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
 
@@ -10,6 +10,7 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
   * Khi phân tích luồng dữ liệu (log), nhận thấy có rất nhiều IP xuất hiện. Tuy nhiên, khi kéo xuống gần giữa và cuối file, xuất hiện tần suất dày đặc của hai IP liên tục gửi các gói tin không hợp lệ cho nhau với tốc độ cực nhanh (tính bằng mili giây).
   * Hành vi gửi tin siêu tốc này chứng tỏ đây là hoạt động quét/tấn công tự động bằng công cụ (tool) chứ không phải do người dùng bình thường thao tác. Qua đó xác định được cặp IP này.
 * **Đáp án:** `172.29.9.159,13.212.67.96`
+<img width="2508" height="1037" alt="image" src="https://github.com/user-attachments/assets/e6c5ebdd-c648-4235-9bbd-6a211b0982f7" />
 
 ---
 
@@ -19,6 +20,7 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
   * Lọc kết hợp với địa chỉ IP của hai thực thể đã tìm thấy ở Q1 để thu hẹp phạm vi giao tiếp SSH giữa attacker và victim.
   * Kiểm tra các gói tin thiết lập kết nối ban đầu (SSH Handshake), thông tin banner sẽ hiển thị rõ phiên bản OpenSSH và tên bản phân phối OS.
 * **Đáp án:** `SSH-2.0-OpenSSH_10.2p1 Ubuntu-2ubuntu3.2`
+<img width="1313" height="473" alt="image" src="https://github.com/user-attachments/assets/d33e17cd-d7f4-42ba-a1e7-10f9a6046941" />
 
 ---
 
@@ -27,6 +29,7 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
 * **Phương pháp giải:** * Xem xét kỹ cấu trúc dữ liệu của các gói tin TCP được gửi đi hàng loạt từ phía attacker.
   * Kiểm tra phần dữ liệu dạng Hex (thập lục phân) hoặc ASCII của gói tin, ta sẽ phát hiện các dấu hiệu đặc trưng của một công cụ quét mạng mã nguồn mở phổ biến chuyên dùng để rà quét cổng (port scanning).
 * **Đáp án:** `nmap`
+<img width="1995" height="932" alt="image" src="https://github.com/user-attachments/assets/224d4498-ce26-4c49-a5b9-07f96b5d4834" />
 
 ---
 
@@ -44,6 +47,7 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
     ```
   * Lọc kỹ các gói tin HTTP chứa phản hồi trả về, tìm các thông số có thuộc tính `temp...: true` và `role: admin`. Luồng chứa gói tin phản hồi thành công này chính là câu trả lời.
 * **Đáp án:** `tcp.stream eq 4491`
+<img width="2125" height="795" alt="image" src="https://github.com/user-attachments/assets/250be851-90b7-4140-be57-166f3d986831" />
 
 ---
 
@@ -69,6 +73,8 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
 * **Phương pháp giải:** * Di chuyển xuống gần cuối file `.pcapng` để theo dõi các lệnh hệ thống tiếp theo của kẻ tấn công.
   * Tìm kiếm các hành vi sử dụng lệnh `cat` để đọc nội dung file. Phát hiện attacker đã thực hiện đọc thành công hai file `.env` chứa biến môi trường.
 * **Đáp án:** `/app/templates/.env,/app/static/.env`
+<img width="2197" height="570" alt="image" src="https://github.com/user-attachments/assets/0fc3f1f9-ac32-403c-884b-fe602acab503" />
+<img width="2161" height="600" alt="image" src="https://github.com/user-attachments/assets/7fcc4f71-9c36-47c6-82f2-3c0f166dbc6c" />
 
 ---
 
@@ -79,3 +85,5 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
     `Ich1ck3nPlus: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`
   * Câu hỏi chỉ yêu cầu tìm GitHub ID (tức là Username).
 * **Đáp án:** `Ich1ck3nPlus`
+<img width="848" height="542" alt="image" src="https://github.com/user-attachments/assets/f71a74a7-7996-496d-a702-212611c2b2ba" />
+
