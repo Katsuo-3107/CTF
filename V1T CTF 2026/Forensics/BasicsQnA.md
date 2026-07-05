@@ -88,3 +88,6 @@ Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
 * **Đáp án:** `Ich1ck3nPlus`
 <img width="848" height="542" alt="image" src="https://github.com/user-attachments/assets/f71a74a7-7996-496d-a702-212611c2b2ba" />
 
+
+Link Đề bài: https://basicqna.v1t.site
+
