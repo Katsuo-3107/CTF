@@ -1,5 +1,6 @@
 # Forensics Basic CTF - Writeup
 Tool: Wireshark
+
 Flag: v1t{llm_c0uld_s0lv3_th1s_ez_chall3ng3!!!}
 
 ---
