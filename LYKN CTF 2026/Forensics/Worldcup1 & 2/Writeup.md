@@ -32,7 +32,6 @@ Check the file structure
  binwalk -e worldcup2_challenge.png
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
---------------------------------------------------------------------------------
 283620        0x453E4         Zip archive data, at least v2.0 to extract, compressed size: 29, uncompressed size: 27, name: flag_hidden.txt
 
 WARNING: One or more files failed to extract: either no utility was found or it's unimplemented
