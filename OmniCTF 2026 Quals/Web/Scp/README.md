@@ -6,7 +6,7 @@ Flag: **CTF{ganzir_was_already_in_the_fire_plan}**
 ---
 ## 1. Phân Tích Chức Năng Cửa Ngõ (Employee Access Relay)
 
-Khi truy cập vào hệ thống, ta được đưa đến một trang cấu hình hệ thống nội bộ, cụ thể là phần **Employee Access Relay** như trong file `image_567334.png`. Tại đây, hệ thống rò rỉ một số thông tin cực kỳ quan trọng về kiến trúc mạng:
+Khi truy cập vào hệ thống, ta được đưa đến một trang cấu hình hệ thống nội bộ, cụ thể là phần **Employee Access Relay**. Tại đây, hệ thống rò rỉ một số thông tin cực kỳ quan trọng về kiến trúc mạng:
 
 *   **Edge Parser (Proxy phía ngoài):** Xử lý request HTTP và ưu tiên đọc header `Transfer-Encoding: chunked`.
 *   **Bridge Parser (Máy chủ backend):** Ưu tiên đọc header `Content-Length` trước khi chuyển tiếp các byte còn lại.
@@ -21,7 +21,7 @@ Sự bất đồng bộ trong cách xử lý request giữa **Edge** và **Bridg
 
 Bởi vì hệ thống hỗ trợ giao thức HTTP/2 ở mặt ngoài nhưng lại hạ cấp (downgrade) xuống HTTP/1.1 khi giao tiếp với máy chủ backend, ta có thể tiến hành tấn công **H2.TE Request Smuggling**. 
 
-Em sử dụng công cụ **Burp Suite** để cấu hình và gửi một HTTP/2 request giả mạo nhằm "buôn lậu" (smuggle) một request thứ hai vào bên trong. Như được thể hiện trong file `image_56731a.png`, payload khai thác được xây dựng như sau:
+Em sử dụng công cụ **Burp Suite** để cấu hình và gửi một HTTP/2 request giả mạo nhằm "buôn lậu" (smuggle) một request thứ hai vào bên trong. Như được thể hiện, payload khai thác được xây dựng như sau:
 
 ```http
 POST /employee HTTP/2
@@ -86,10 +86,12 @@ vector: Ganzir lower transit spine
 
 Nhấn nút **Render Template**. Cú pháp `{{ }}` sẽ ra lệnh cho engine Jinja2 thực thi hàm `read_file` với đường dẫn là `/flag.txt`. Kết quả trả về sẽ được in thẳng ra màn hình hiển thị.
 
-Nhìn vào phần **Rendered Preview** trong file `image_5672fa.png`, ta đã thu được cờ thành công!
+Nhìn vào phần **Rendered Preview**, ta đã thu được cờ thành công!
+
+<img width="1452" height="590" alt="image" src="https://github.com/user-attachments/assets/b256eccc-6e49-417c-b4b7-e2b56a20fa4b" />
 
 **Flag:** `CTF{ganzir_was_already_in_the_fire_plan}`
 
 ```
-
+CTF{ganzir_was_already_in_the_fire_plan}
 ```
