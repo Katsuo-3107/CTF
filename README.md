@@ -10,3 +10,4 @@ Thanks for reading my site ! GGWP !
 5. **OmniCTF 2026 Quals** [OmniCTF 2026 Quals](./OmniCTF%202026%20Quals) ( 269 / 778 )
 6. **BDSec CTF 2026** [BDSec CTF 2026](./BDSec%20CTF%202026) ( 336 / 545 )
 7. **Bush Bash CTF 2026** [Bush Bash CTF 2026](./Bush%20Bash%20CTF%202026) ( 257 / 540 )
+8. **Kali Team CTF 2026** [Kali Team CTF 2026](./Kali%20Team%20CTF%202026) ( 175 / 645 )
